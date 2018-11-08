@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Email Validation</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"> {% load static %}
+    <link rel="stylesheet" href="{% static 'register/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center" style="margin-top: 4%">
+            <div class="col-6">
+                <div class="card">
+                    <h4 class="card-header text-center">Fill Camera Details</h4>
+                    <div class="card-block">
+                        <form method="post" action="/events/eventdetails">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label> Camera 1 location</label>
+                                <input name="cam_location" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "cam_location" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label> Camera 2 location</label>
+                                <input name="cam_location" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "cam_location" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label> Camera 3 location</label>
+                                <input name="cam_location" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "cam_location" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label> Camera 4 location</label>
+                                <input name="cam_location" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "cam_location" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Camera Type</label>
+                                <input name="camera_typ" type="text" class="form-control">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "camera_typ" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Deploy Cameras" class="btn btn-danger">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^crowdcounter/',include('crowdcounter.urls')),
     url(r'^analysis/',include('analysis.urls')),
+    url(r'^events/',include('events.urls')),
 ]
